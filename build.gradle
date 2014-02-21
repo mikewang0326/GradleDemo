@@ -1,3 +1,7 @@
-task count << {
-    4.times { print "$it "}
+task hello << {
+    println 'Hello world!'
+}
+
+task intro(dependsOn: hello) << {
+    println "I'm Gradle"
 }
