@@ -1,5 +1,5 @@
-task hello {
-    doLast {
-       println 'hello world'
-    }
+task upper << {
+    String someString = 'mY_nAmE'
+    println "Original:" + someString
+    println "Uppder case: " + someString.toUpperCase()
 }
