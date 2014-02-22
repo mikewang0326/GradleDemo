@@ -1,11 +1,9 @@
 task hello << {
-    println 'Hello Earth'
-}
-
-hello.doFirst {
-    println 'Hello Venus'
+    println 'Hello World'
 }
 
 hello.doLast {
-    println 'Hello Mars'
+    println "Greetings from the $hello.name task."
 }
+
+// Note: if the Strings contains special symbols, like "'", "$", the brackets in the outside must use "
