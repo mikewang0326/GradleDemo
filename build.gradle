@@ -1,9 +1,7 @@
-task hello << {
-    println 'Hello World'
+task myTask {
+    ext.myProperty = 'myValue'
 }
 
-hello.doLast {
-    println "Greetings from the $hello.name task."
+task printTaskProperties << {
+    println myTask.myProperty
 }
-
-// Note: if the Strings contains special symbols, like "'", "$", the brackets in the outside must use "
