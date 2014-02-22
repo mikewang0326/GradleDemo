@@ -1,13 +1,15 @@
-defaultTasks 'clean', 'run'
-
-task clean << {
-    println 'Default Cleaning!'
+task distribution << {
+    println "We build the zip with version = $version"
 }
 
-task run << {
-    println 'Default Running'
+task release(dependsOn: 'distribution') << {
+    println 'We release now'
 }
 
-task other << {
-    println "I'm not a default task!"
+gradle.taskGraph.whenReady {taskGraph ->
+    if (taskGraph.hasTask(release)) {
+        version = '1.0'
+    } else {
+        version = "1.0-SNAPSHOT"
+    }
 }
