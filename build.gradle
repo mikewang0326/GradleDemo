@@ -1,7 +1,13 @@
-task hello << {
-    println 'Hello world!'
+task taskX(dependsOn: 'taskY') << {
+    println 'taskX'
 }
 
-task intro(dependsOn: hello) << {
-    println "I'm Gradle"
+task taskY << {
+    println 'taskY'
 }
+
+
+//Please notice,  that you can't use a shortcut notation  (see  ) when  referring  to Section 6.8, ¡°Shortcut notations¡±
+task, which is not defined yet.
+
+// Mike: the order can be in the back, but it must be defined
